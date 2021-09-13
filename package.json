@@ -1,0 +1,38 @@
+{
+  "name": "cypress-docker-images",
+  "version": "1.0.0",
+  "description": "These images provide all of the required dependencies for running Cypress in Docker.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./generate-config",
+    "add:base": "node ./generate-base-image",
+    "add:included": "node ./generate-included-image",
+    "check:markdown": "find . -type f -name '*.md' ! -path './node_modules/*' ! -path './examples/*' | xargs -L1 npx markdown-link-check --quiet"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cypress-io/cypress-docker-images.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cypress-io/cypress-docker-images/issues"
+  },
+  "homepage": "https://github.com/cypress-io/cypress-docker-images#readme",
+  "devDependencies": {
+    "globby": "10.0.1",
+    "markdown-link-check": "3.8.0",
+    "semver": "7.1.3",
+    "shelljs": "0.8.3",
+    "slugify": "^1.4.7"
+  }
+}
